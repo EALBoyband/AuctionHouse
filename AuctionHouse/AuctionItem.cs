@@ -8,5 +8,6 @@ namespace AuctionHouse
 {
     class AuctionItem
     {
+
     }
 }

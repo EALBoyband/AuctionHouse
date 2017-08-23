@@ -20,7 +20,7 @@ namespace AuctionHouse
 
 
 
-        void Run()
+        public void Run()
         {    
             while (true)
             {
