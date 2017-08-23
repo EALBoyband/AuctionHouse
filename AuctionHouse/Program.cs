@@ -5,14 +5,14 @@ using System.Text;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AuctionHouse
 {
     class Program
     {
-        StreamReader sr;
-        StreamWriter sw;   
+        Socket s;
         static void Main(string[] args)
         {
             Program prog = new Program();
@@ -27,8 +27,9 @@ namespace AuctionHouse
 
             while (true)
             {
-                Socket client = server.AcceptSocket();
-                Console.WriteLine($"Client found with ip: {client.RemoteEndPoint}");
+                s = server.AcceptSocket();
+                ClientHandler ch = new ClientHandler(s);
+                //Thread
             }
         }
     }

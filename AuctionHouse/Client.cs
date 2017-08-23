@@ -10,10 +10,13 @@ namespace AuctionHouse
 {
     class Client
     {
-        private Socket stuff;
-        public Client(Socket sock)
+        private Socket s;
+        NetworkStream stream;
+
+        public Client(Socket s)
         {
-            stuff = sock;
+            this.s = s;
+            
         }
     }
 }
