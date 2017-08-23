@@ -29,7 +29,7 @@ namespace AuctionHouse
             {
                 s = server.AcceptSocket();
                 ClientHandler ch = new ClientHandler(s);
-                //Thread
+                new Thread(() => ch.Run());
             }
         }
     }
