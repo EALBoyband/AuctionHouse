@@ -30,10 +30,6 @@ namespace AuctionHouse
         private void RunService()
         {
 
-            //Thread cm = new Thread(() => CheckMessages());
-            //cm.IsBackground = true;
-            //cm.Start();
-
             listener.Start();
 
             while (true)

@@ -11,9 +11,6 @@ namespace AuctionHouse
 {
     class ClientHandler
     {
-        public delegate void ReadHandler();
-        public event ReadHandler ReadIsHere;
-
         private string message;
         ComService cm;
         Client c;
@@ -41,7 +38,7 @@ namespace AuctionHouse
 
         public void Run()
         {
-            //c.WriteTo("Hi there");
+           
             bool canRead = true;
             while (canRead)
             {
@@ -65,11 +62,7 @@ namespace AuctionHouse
                 }
                
 
-
-
-
-
-            }
+           }
         }
 
         public void WriteToClient(string s)
