@@ -11,8 +11,9 @@ namespace AuctionHouse
 {
     class ClientHandler
     {
-        //public delegate string ReadHandler();
-        //public event ReadHandler ReadIsHere;
+        public delegate void ReadHandler();
+        public event ReadHandler ReadIsHere;
+
         private string message;
         ComService cm;
         Client c;
@@ -21,6 +22,11 @@ namespace AuctionHouse
         {
             get { return message; }
             set { message = value; }
+        }
+
+        public string ClientEndPoint
+        {
+            get { return c.EndPoint; }
         }
 
         public ClientHandler(Socket s, ComService cm)
@@ -44,7 +50,7 @@ namespace AuctionHouse
                     if (message == null)
                     {
                         message = c.ReadFrom();
-                        cm.ParseInput(message);
+                        cm.ParseInput(message, this);
                         message = null;
 
                     }

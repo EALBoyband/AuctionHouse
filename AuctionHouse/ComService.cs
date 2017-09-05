@@ -64,7 +64,7 @@ namespace AuctionHouse
             TimeToBroadcast(s);
         }
 
-        public void ParseInput(string s)
+        public void ParseInput(string s, ClientHandler ch)
         {
             string[] tokens = s.Split(' ');
             switch (tokens[0].ToLower())
@@ -72,7 +72,7 @@ namespace AuctionHouse
                 case "bid":
                     break;
                 default:
-                    BroadCast(s);
+                    BroadCast($"{ch.ClientEndPoint} says: {s}");
                     break;
             }
         }
