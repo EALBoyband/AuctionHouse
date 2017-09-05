@@ -47,6 +47,7 @@
     <Compile Include="AuctionItem.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="ClientHandler.cs" />
+    <Compile Include="ComService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
